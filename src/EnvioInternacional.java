@@ -31,7 +31,7 @@ public class EnvioInternacional extends Envio {
 
     @Override
     protected String obtenerCargosAdd() {
-        return String.format("PaÃ­s de destino: %s%nCargo de gestiÃ³n internacional: Q%.2f%nRecargo del 12%%: Q%.2f",
+        return String.format("País de destino: %s%nCargo de gestión internacional: Q%.2f%nRecargo del 12%%: Q%.2f",
                 paisDestino, cargoGestion, calcularRecargo());
     }
 }

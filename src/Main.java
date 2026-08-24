@@ -10,7 +10,7 @@ public class Main {
         boolean salir = false;
 
         while (!salir) {
-            mostrarmenu();
+            mostrarMenu();
             int opcion = leerOpcionMenu();
 
             switch (opcion){
@@ -22,7 +22,7 @@ public class Main {
                     break;
                 case 3:
                     salir = true;
-                    System.out.printf("Saliendo del sistema");
+                    System.out.println("Saliendo del sistema");
                     break;
             }
 
@@ -31,10 +31,10 @@ public class Main {
     }
 
     private static void mostrarMenu(){
-        System.out.printf("Sistema de Envíos");
+        System.out.println("Sistema de Envíos");
         System.out.println("1. Registrar envío nacional");
         System.out.println("2. Registrar envío internacional");
-        System.out.printf("3. Salir");
+        System.out.println("3. Salir");
         System.out.println("Seleccine un opción: ");
     }
 
@@ -63,14 +63,29 @@ public class Main {
             String departamento = leerTextoNVacio("Departamento de destino: ");
             double distancia = leerDoublePositivo("Distancia del envío (km): ");
 
-            // Se guarda en una variable de tipo Envio (polimorfismo)
             Envio envio = new EnvioNacional(codigo, destinatario, peso, departamento, distancia);
 
             System.out.println("Envío registrado con éxito.");
-            envio.mostrarResumen(true); // se usa la versiÃ³n sobrecargada con desglose completo
+            envio.mostrarResumen(true);
 
             preguntaOtroRegistro();
         }
+
+    private static void registEnvioInternacional() {
+        System.out.println("Registro de envío internacional");
+
+        String codigo = leerTextoNVacio("Código del envío: ");
+        String destinatario = leerTextoNVacio("Nombre del destinatario: ");
+        double peso = leerDoublePositivo("Peso del paquete (kg): ");
+        String pais = leerTextoNVacio("País de destino: ");
+
+         Envio envio = new EnvioInternacional(codigo, destinatario, peso, pais);
+
+        System.out.println("Envío registrado con éxito.");
+        envio.mostrarResumen(true);
+
+        preguntaOtroRegistro();
+    }
 
 
 
