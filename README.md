@@ -27,7 +27,7 @@
 <h5> Instrucciones para la Ejecución del Proyecto </h5>
 Se debe inicializar la compilación del proyecto presionando el botón con forma trinangular en la parte superior del mismo, para después en la consola selecionar la opción deseada utilizando solamente números del 1 al 3, se ingeresan los datos que el sistema solicita paso a paso, una vez finalizado se mostrará el resumen y se consultará si desea realizar otro registro o no.
 
-![]();
+![](Evidencia/Captura de pantalla 2026-08-23 231604.png);
 
 <h5>Programación II</h5>
 <h5>Emerson Omar Martínez Porras</h5>
