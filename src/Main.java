@@ -89,11 +89,17 @@ public class Main {
 
 
 
-        private static void preguntaOtroRegistro() {
-            System.out.print("¿Desea registrar otro envío? (S/N): ");
-            String respuesta = scan.nextLine().trim().toUpperCase();
-            if (!respuesta.equals("S")) {
-                System.out.println("Regresando al menú principal...");
+        private static boolean preguntaOtroRegistro() {
+            while (true) {
+                System.out.print("¿Desea registrar otro envío? (S/N): ");
+                String respuesta = scan.nextLine().trim().toUpperCase();
+                if (respuesta.equals("S")) {
+                    return true;
+                } else if (respuesta.equals("N")) {
+                    System.out.println("Saliendo del sistema.");
+                    return false;
+                }
+                System.out.println("Respuesta inválida. Escriba S o N.");
             }
         }
 
